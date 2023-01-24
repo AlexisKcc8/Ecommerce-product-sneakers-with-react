@@ -1,36 +1,72 @@
-import { useEffect, useState } from "react";
+import { AppLogic } from "./AppLogic";
+import { Carousel } from "./components/Carousel";
+import { ContainerDetails } from "./components/ContainerDetails";
+import { ImagesItem } from "./components/ImagesItem";
+import { InfoProduct } from "./components/InfoProduct";
 import { MenuNavbar } from "./components/MenuNavbar";
-import { NabvarMenu } from "./components/NabvarMenu";
-
+import "./styles/global-styles.scss";
 function App() {
-  const [dataProducts, setDataProducts] = useState([]);
-  useEffect(() => {
-    getImgsLocal();
-  }, []);
-
-  const getImgsLocal = async () => {
-    const result = await fetch("/imgProduct.json");
-    const payload = await result.json();
-    setDataProducts(payload);
-  };
+  const {
+    dataProducts,
+    currentProduct,
+    nextProduct,
+    prevProduct,
+    changeProduct,
+    amountProduct,
+    sumAmountProduct,
+    resAmountProduct,
+    addProductToCart,
+  } = AppLogic();
 
   return (
     <section className="App container">
       <header className="row">
-        <section className="col-12 bg-white">
-          <MenuNavbar />
+        <section className="container">
+          <div className="row">
+            <section className="col-12 bg-white">
+              <MenuNavbar />
+            </section>
+          </div>
         </section>
       </header>
-      <main>aqui va lo demas</main>
-      {/* {dataProducts.products.map((product) => (
-        <img
-          key={product.id}
-          src={product.url}
-          style={{ width: "10rem" }}
-          className="card-img-top"
-          alt="..."
-        ></img>
-      ))} */}
+      <main className="row mt-lg-4">
+        <ContainerDetails>
+          <section className="col-12 col-lg-4 p-0 container-imgs-product ">
+            <article className="container p-0 w-100   d-flex flex-lg-column justify-content-lg-center align-items-lg-center ">
+              <section className="container-carousel mb-3">
+                {currentProduct ? (
+                  <Carousel
+                    currentProduct={currentProduct}
+                    nextProduct={nextProduct}
+                    prevProduct={prevProduct}
+                  ></Carousel>
+                ) : null}
+              </section>
+
+              <section className="d-none d-lg-flex w-100 justify-content-lg-between gap-3">
+                {dataProducts.imgProducts
+                  ? dataProducts.imgProducts.map((product, index) => (
+                      <ImagesItem
+                        key={product.id}
+                        url={product.url}
+                        currentIndex={index}
+                        changeProduct={changeProduct}
+                      ></ImagesItem>
+                    ))
+                  : null}
+              </section>
+            </article>
+          </section>
+          <section className="col-12 col-lg-6  d-flex justify-content-center py-lg-3">
+            <InfoProduct
+              amountProduct={amountProduct}
+              sumAmountProduct={sumAmountProduct}
+              resAmountProduct={resAmountProduct}
+              addProductToCart={addProductToCart}
+            ></InfoProduct>
+          </section>
+        </ContainerDetails>
+      </main>
     </section>
   );
 }

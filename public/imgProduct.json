@@ -1,5 +1,5 @@
 {
-  "products": [
+  "imgProducts": [
     {
       "id": 1,
       "url": "/src/assets/images/image-product-1.jpg"
@@ -18,7 +18,7 @@
     }
   ],
 
-  "products-thumbnail": [
+  "imgThumbnails": [
     {
       "id": 1,
       "url": "/src/assets/images/image-product-1-thumbnail.jpg"
