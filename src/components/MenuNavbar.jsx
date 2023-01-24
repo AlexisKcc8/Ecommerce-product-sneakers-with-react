@@ -2,9 +2,9 @@ import { ItemMenuNavbar } from "./ItemMenuNavbar";
 import "../styles/components/style-menu-navbar.scss";
 export const MenuNavbar = () => {
   return (
-    <nav className="container-navbar navbar navbar-expand-lg py-2 ">
-      <div className="container-fluid p-0 m-0  d-flex justify-content-center align-items-center">
-        <div className="d-flex justify-content-center align-items-center">
+    <nav className="navbar navbar-expand-lg py-2  w-100">
+      <div className="container-fluid p-0 m-0  d-flex justify-content-around align-items-center">
+        <div className="d-flex justify-content-center align-items-center ">
           <button
             className="navbar-toggler border-0"
             type="button"
@@ -50,31 +50,31 @@ export const MenuNavbar = () => {
           <div className="offcanvas-body">
             <ul className="navbar-nav d-flex justify-content-start align-items-lg-center flex-grow-1 p-0">
               <ItemMenuNavbar
-                className="nav-link my-0 mx-2"
+                className="nav-link my-0 mx-2 myItemNavbar"
                 aria-current="page"
               >
                 Collections
               </ItemMenuNavbar>
               <ItemMenuNavbar
-                className="nav-link my-0 mx-2"
+                className="nav-link my-0 mx-2 myItemNavbar"
                 aria-current="page"
               >
                 Men
               </ItemMenuNavbar>
               <ItemMenuNavbar
-                className="nav-link my-0 mx-2"
+                className="nav-link my-0 mx-2 myItemNavbar"
                 aria-current="page"
               >
                 Women
               </ItemMenuNavbar>
               <ItemMenuNavbar
-                className="nav-link my-0 mx-2"
+                className="nav-link my-0 mx-2 myItemNavbar"
                 aria-current="page"
               >
                 About
               </ItemMenuNavbar>
               <ItemMenuNavbar
-                className="nav-link my-0 mx-2"
+                className="nav-link my-0 mx-2 myItemNavbar"
                 aria-current="page"
               >
                 Contact
@@ -83,15 +83,15 @@ export const MenuNavbar = () => {
           </div>
         </div>
         {/* icono carrito y usuario */}
-        <div className="d-flex justify-content-end align-items-center">
+        <div className="d-flex justify-content-end align-items-center ">
           <button type="button" className="btn btn-white me-2 me-lg-4">
             <img src="/src/assets/images/icon-cart.svg" alt="carrito" />
           </button>
-          <div className="w-25 overflow-hidden ">
+          <div className="m-0 p-0 container-avatar">
             <img
-              className="w-100"
-              src="/src/assets/images/image-avatar.png"
-              alt="avatar-user"
+              className=" container-avatar__img"
+              src="/src/assets/images/avatar.jpg"
+              alt="myAvatar"
             />
           </div>
         </div>

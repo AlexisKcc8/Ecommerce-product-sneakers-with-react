@@ -21,3 +21,18 @@ body {
   margin-left: 5rem;
   background-color: red;
 }
+@media screen and (min-width: 1200px) {
+  .subtitle-product {
+    font-size: 1rem;
+  }
+  .title-info-product {
+    font-size: 3.5rem;
+  }
+  .text-info-product {
+    font-size: 1.4rem;
+  }
+  .my-product {
+    margin: 0 0 0 6rem;
+    padding: 0 0 0 1rem;
+  }
+}

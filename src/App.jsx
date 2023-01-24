@@ -22,8 +22,8 @@ function App() {
     <section className="App container">
       <header className="row">
         <section className="container">
-          <div className="row">
-            <section className="col-12 bg-white">
+          <div className="row p-0">
+            <section className="col-12  p-0">
               <MenuNavbar />
             </section>
           </div>

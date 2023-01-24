@@ -1,0 +1,13 @@
+.myItemNavbar {
+  font-weight: bold;
+  color: black;
+  &:hover {
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .myItemNavbar {
+    color: var(--DarkGrayishBlue);
+    font-weight: 500;
+  }
+}
