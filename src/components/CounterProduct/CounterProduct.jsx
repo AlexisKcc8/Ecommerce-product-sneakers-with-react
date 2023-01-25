@@ -1,4 +1,4 @@
-import "../styles/components/style-counter-product.scss";
+import "./style-counter-product.scss";
 export const CounterProduct = (props) => {
   const { amountProduct, sumAmountProduct, resAmountProduct } = props;
   return (

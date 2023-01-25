@@ -1,6 +1,7 @@
-import { ItemMenuNavbar } from "./ItemMenuNavbar";
-import "../styles/components/style-menu-navbar.scss";
-export const MenuNavbar = () => {
+import "./style-menu-navbar.scss";
+import { ItemMenuNavbar } from "../ItemMenuNavbar/ItemMenuNavbar";
+export const MenuNavbar = (props) => {
+  const { showCart, totalAmountCart } = props;
   return (
     <nav className="navbar navbar-expand-lg py-2  w-100">
       <div className="container-fluid p-0 m-0  d-flex justify-content-around align-items-center">
@@ -84,7 +85,18 @@ export const MenuNavbar = () => {
         </div>
         {/* icono carrito y usuario */}
         <div className="d-flex justify-content-end align-items-center ">
-          <button type="button" className="btn btn-white me-2 me-lg-4">
+          <button
+            type="button"
+            className="btn btn-white me-2 me-lg-4 btn-cart"
+            onClick={showCart}
+          >
+            {totalAmountCart > 0 ? (
+              <div className="container-amount-cart">
+                <h3 className="container-amount-cart__amount">
+                  {totalAmountCart}
+                </h3>
+              </div>
+            ) : null}
             <img src="/src/assets/images/icon-cart.svg" alt="carrito" />
           </button>
           <div className="m-0 p-0 container-avatar">

@@ -1,4 +1,4 @@
-import "../styles/components/style-images-item.scss";
+import "./style-images-item.scss";
 export const ImagesItem = (props) => {
   const { url, currentIndex, changeProduct } = props;
   return (

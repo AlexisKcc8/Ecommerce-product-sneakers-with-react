@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/components/style-carousel.scss";
+import "./style-carousel.scss";
 export const Carousel = (props) => {
   const { currentProduct, nextProduct, prevProduct } = props;
   return (

@@ -1,8 +1,9 @@
-import "../styles/components/style-info-product.scss";
-import { CounterProduct } from "./CounterProduct";
-import { DiscountPriceProduct } from "./DiscountPriceProduct";
-import { IconCart } from "./IconCart";
-import { MyButton } from "./MyButton";
+import "./style-info-product.scss";
+import { CounterProduct } from "../CounterProduct/CounterProduct";
+import { DiscountPriceProduct } from "../DiscountPriceProduct/DiscountPriceProduct";
+import { IconCart } from "../IconCart/IconCart";
+
+import { MyButton } from "../MyButton/MyButton";
 export const InfoProduct = (props) => {
   const {
     amountProduct,
@@ -21,7 +22,7 @@ export const InfoProduct = (props) => {
         Featuring a durable rubber outer sole, they’ll withstand everything the
         weather can offer.
       </p>
-      <div className="mb-4">
+      <div className="mb-4 ">
         <DiscountPriceProduct></DiscountPriceProduct>
       </div>
       <section className="container">
@@ -37,7 +38,7 @@ export const InfoProduct = (props) => {
           </div>
           <div className="col-12 p-0 col-lg-6 ">
             <MyButton myEvent={addProductToCart}>
-              <span className="me-2">
+              <span className="me-2 z-3">
                 <IconCart myFill={"#fff"}></IconCart>
               </span>{" "}
               Add to cart

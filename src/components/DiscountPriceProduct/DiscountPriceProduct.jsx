@@ -1,4 +1,4 @@
-import "../styles/components/style-discount-price-product.scss";
+import "./style-discount-price-product.scss";
 export const DiscountPriceProduct = () => {
   return (
     <section className="d-flex flex-lg-column">

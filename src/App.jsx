@@ -1,10 +1,14 @@
-import { AppLogic } from "./AppLogic";
-import { Carousel } from "./components/Carousel";
-import { ContainerDetails } from "./components/ContainerDetails";
-import { ImagesItem } from "./components/ImagesItem";
-import { InfoProduct } from "./components/InfoProduct";
-import { MenuNavbar } from "./components/MenuNavbar";
+import { CardCart } from "./components/CardCart/CardCart";
+
+import { ContainerDetails } from "./components/ContainerDetails/ContainerDetails";
+import { ContainerLayerAbsolute } from "./components/ContainerLayerAbsolute/ContainerLayerAbsolute";
+import { ImagesItem } from "./components/ImagesItem/ImagesItem";
+import { InfoProduct } from "./components/InfoProduct/InfoProduct";
+import { ItemProductCart } from "./components/ItemProductCart/ItemProductCart";
+import { MenuNavbar } from "./components/MenuNavbar/MenuNavbar";
+import { useLogic } from "./useLogic";
 import "./styles/global-styles.scss";
+import { Carousel } from "./components/Carousel/Carousel";
 function App() {
   const {
     dataProducts,
@@ -16,7 +20,12 @@ function App() {
     sumAmountProduct,
     resAmountProduct,
     addProductToCart,
-  } = AppLogic();
+    isVisibleCart,
+    showCart,
+    arrayProductCart,
+    totalAmountCart,
+    deleteProductToCart,
+  } = useLogic();
 
   return (
     <section className="App container">
@@ -24,12 +33,15 @@ function App() {
         <section className="container">
           <div className="row p-0">
             <section className="col-12  p-0">
-              <MenuNavbar />
+              <MenuNavbar
+                showCart={showCart}
+                totalAmountCart={totalAmountCart}
+              />
             </section>
           </div>
         </section>
       </header>
-      <main className="row mt-lg-4">
+      <main className="row mt-lg-4 position-relative">
         <ContainerDetails>
           <section className="col-12 col-lg-4 p-0 container-imgs-product ">
             <article className="container p-0 w-100   d-flex flex-lg-column justify-content-lg-center align-items-lg-center ">
@@ -57,7 +69,7 @@ function App() {
               </section>
             </article>
           </section>
-          <section className="col-12 col-lg-6  d-flex justify-content-center py-lg-3">
+          <section className="col-12 col-lg-6  d-flex justify-content-center py-lg-3 ">
             <InfoProduct
               amountProduct={amountProduct}
               sumAmountProduct={sumAmountProduct}
@@ -66,6 +78,27 @@ function App() {
             ></InfoProduct>
           </section>
         </ContainerDetails>
+        {isVisibleCart ? (
+          <ContainerLayerAbsolute>
+            <section className="mt-3 m-lg-0">
+              <CardCart arrayProductCart={arrayProductCart}>
+                {arrayProductCart.length > 0 ? (
+                  arrayProductCart.map((product) => (
+                    <ItemProductCart
+                      key={product.id}
+                      product={product}
+                      deleteProductToCart={deleteProductToCart}
+                    ></ItemProductCart>
+                  ))
+                ) : (
+                  <div className="d-flex justify-content-center">
+                    <p className="">Your cart is empty</p>
+                  </div>
+                )}
+              </CardCart>
+            </section>
+          </ContainerLayerAbsolute>
+        ) : null}
       </main>
     </section>
   );
