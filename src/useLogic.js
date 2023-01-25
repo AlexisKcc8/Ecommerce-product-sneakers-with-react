@@ -71,7 +71,7 @@ export const useLogic = () => {
     setArrayProductCart([...arrayProductCart, objectCart]);
   };
   const deleteProductToCart = (id, amountProduct) => {
-    let isAcepted = confirm("Estas seguro de eliminar este producto");
+    let isAcepted = confirm("Are you sure delete product?");
     if (!isAcepted) return;
 
     let newArray = arrayProductCart.filter((product) => product.id !== id);
@@ -98,5 +98,6 @@ export const useLogic = () => {
     arrayProductCart,
     totalAmountCart,
     deleteProductToCart,
+    indexCurrentProduct,
   };
 };

@@ -25,6 +25,7 @@ function App() {
     arrayProductCart,
     totalAmountCart,
     deleteProductToCart,
+    indexCurrentProduct,
   } = useLogic();
 
   return (
@@ -63,6 +64,7 @@ function App() {
                         url={product.url}
                         currentIndex={index}
                         changeProduct={changeProduct}
+                        isSelected={indexCurrentProduct === index}
                       ></ImagesItem>
                     ))
                   : null}
