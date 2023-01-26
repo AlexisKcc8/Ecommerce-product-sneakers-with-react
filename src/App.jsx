@@ -122,7 +122,7 @@ function App() {
                         className="border-0 bg-transparent"
                         onClick={showModal}
                       >
-                        <img src="/src/assets/images/icon-close.svg" alt="" />
+                        <img src="../../assets/images/icon-close.svg" alt="" />
                       </button>
                     </div>
 
