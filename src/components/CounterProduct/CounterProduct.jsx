@@ -23,7 +23,7 @@ export const CounterProduct = (props) => {
       >
         <img
           className="w-100"
-          src="../../../public/assets/images/icon-plus.svg"
+          src="../../assets/images/icon-plus.svg"
           alt="button-plus"
         />
       </button>

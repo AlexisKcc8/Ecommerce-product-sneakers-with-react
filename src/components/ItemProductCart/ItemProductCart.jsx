@@ -20,7 +20,7 @@ export const ItemProductCart = (props) => {
             className="w-100 h-100 btn-delete-item-product"
             onClick={() => deleteProductToCart(id, amountProduct)}
           >
-            <img src="/src/assets/images/icon-delete.svg" alt="" />
+            <img src="../../assets/images/icon-delete.svg" alt="" />
           </button>
         </article>
       </section>

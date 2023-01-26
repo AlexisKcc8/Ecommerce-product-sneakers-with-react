@@ -18,7 +18,7 @@ export const MenuNavbar = (props) => {
             <div className="d-flex justify-content-center align-items-center">
               <img
                 className="p-0 m-0 "
-                src="/src/assets/images/icon-menu.svg"
+                src="../../assets/images/icon-menu.svg"
                 alt="menú"
               />
             </div>
