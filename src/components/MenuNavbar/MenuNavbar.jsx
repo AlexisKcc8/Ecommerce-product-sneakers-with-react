@@ -44,7 +44,10 @@ export const MenuNavbar = (props) => {
                 className="d-flex justify-content-center align-items-center"
                 style={{ width: "100%", height: "100%" }}
               >
-                <img src="/src/assets/images/icon-close.svg" alt="menú-close" />
+                <img
+                  src="../../assets/images/icon-close.svg"
+                  alt="menú-close"
+                />
               </div>
             </button>
           </div>
