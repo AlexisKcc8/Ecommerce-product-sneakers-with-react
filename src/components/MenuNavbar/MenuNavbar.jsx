@@ -102,7 +102,7 @@ export const MenuNavbar = (props) => {
           <div className="m-0 p-0 container-avatar">
             <img
               className=" container-avatar__img"
-              src="/src/assets/images/avatar.jpg"
+              src="../../assets/images/avatar.jpg"
               alt="myAvatar"
             />
           </div>
