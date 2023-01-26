@@ -97,7 +97,7 @@ export const MenuNavbar = (props) => {
                 </h3>
               </div>
             ) : null}
-            <img src="/src/assets/images/icon-cart.svg" alt="carrito" />
+            <img src="/public/assets/images/icon-cart.svg" alt="carrito" />
           </button>
           <div className="m-0 p-0 container-avatar">
             <img
