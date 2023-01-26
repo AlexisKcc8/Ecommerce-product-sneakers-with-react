@@ -5,14 +5,26 @@ export const useLogic = () => {
   const [indexCurrentProduct, setIndexCurrentProduct] = useState(0);
   const [currentProduct, setCurrentProduct] = useState(null);
   const [amountProduct, setAmountProduct] = useState(0);
-  const [isVisibleCart, setIsVisibleCart] = useState(false);
   const [arrayProductCart, setArrayProductCart] = useState([]);
   const [totalAmountCart, setTotalAmountCart] = useState(0);
-
+  const [isVisibleCart, setIsVisibleCart] = useState(false);
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
+  const [widthViewport, setWidthViewport] = useState(null);
   let url = "/imgProduct.json";
   useEffect(() => {
     getImgsLocal();
   }, [indexCurrentProduct]);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidthViewport(window.innerWidth);
+    });
+    () => {
+      window.removeEventListener("resize", () => {
+        setWidthViewport(window.innerWidth);
+      });
+    };
+  }, [widthViewport]);
 
   const getImgsLocal = async () => {
     const result = await fetch(url);
@@ -82,6 +94,9 @@ export const useLogic = () => {
   const showCart = () => {
     setIsVisibleCart(!isVisibleCart);
   };
+  const showModal = () => {
+    setIsVisibleModal(!isVisibleModal);
+  };
 
   return {
     dataProducts,
@@ -99,5 +114,7 @@ export const useLogic = () => {
     totalAmountCart,
     deleteProductToCart,
     indexCurrentProduct,
+    isVisibleModal,
+    showModal,
   };
 };
