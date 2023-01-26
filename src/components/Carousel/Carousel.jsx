@@ -39,7 +39,7 @@ export const Carousel = (props) => {
       >
         <img
           className="p-0 m-0"
-          src="/src/assets/images/icon-previous.svg"
+          src="../../assets/images/icon-previous.svg"
           alt="previous-product"
         />
       </button>
@@ -52,7 +52,7 @@ export const Carousel = (props) => {
       >
         <img
           className="p-0 m-0"
-          src="/src/assets/images/icon-next.svg"
+          src="../../assets/images/icon-next.svg"
           alt="button-next-product"
         />
       </button>
